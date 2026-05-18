@@ -4,10 +4,11 @@ import com.proj.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class AuthUser implements UserDetails {
@@ -16,7 +17,9 @@ public class AuthUser implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return user.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority(role.getType().name()))
+                .collect(Collectors.toSet());
     }
 
     @Override
@@ -27,5 +30,9 @@ public class AuthUser implements UserDetails {
     @Override
     public String getUsername() {
         return user.getUsername();
+    }
+
+    public Long getId() {
+        return user.getId();
     }
 }

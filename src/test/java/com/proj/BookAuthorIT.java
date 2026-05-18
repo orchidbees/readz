@@ -1,6 +1,6 @@
 package com.proj;
 
-import com.proj.dto.BookRequest;
+import com.proj.dto.http.BookRequest;
 import com.proj.entity.Author;
 import com.proj.entity.Book;
 import com.proj.repository.AuthorRepository;

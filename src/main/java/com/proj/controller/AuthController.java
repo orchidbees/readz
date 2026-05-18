@@ -1,9 +1,9 @@
 package com.proj.controller;
 
-import com.proj.dto.AuthRequest;
-import com.proj.dto.AuthResponse;
-import com.proj.dto.UserRequest;
-import com.proj.dto.UserResponse;
+import com.proj.dto.http.AuthRequest;
+import com.proj.dto.http.AuthResponse;
+import com.proj.dto.http.UserRequest;
+import com.proj.dto.http.UserResponse;
 import com.proj.service.AuthService;
 import com.proj.service.UserRegistrationService;
 import lombok.RequiredArgsConstructor;

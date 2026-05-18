@@ -1,8 +1,8 @@
 package com.proj.mapper;
 
-import com.proj.dto.AuthorReference;
-import com.proj.dto.BookRequest;
-import com.proj.dto.BookResponse;
+import com.proj.dto.http.AuthorReference;
+import com.proj.dto.http.BookRequest;
+import com.proj.dto.http.BookResponse;
 import com.proj.entity.Author;
 import com.proj.entity.Book;
 

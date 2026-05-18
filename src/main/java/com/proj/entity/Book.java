@@ -43,6 +43,10 @@ public class Book {
     @Column(name = "year_published")
     private Year yearPublished;
 
+    @OneToMany
+    @JoinColumn(name = "book_id")
+    private Set<UserBook> userBook;
+
     public Set<Author> getAuthors() {
         if (authors == null) {
             authors = new HashSet<>();

@@ -1,11 +1,12 @@
 package com.proj.entity;
 
-import com.proj.constant.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -26,6 +27,22 @@ public class User {
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
+   @ManyToMany(fetch = FetchType.EAGER)
+   @JoinTable(
+           name = "user_roles",
+           joinColumns = @JoinColumn(name = "user_id"),
+           inverseJoinColumns = @JoinColumn(name = "role_id")
+   )
+    private Set<Role> roles;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private Set<UserBook> userBook;
+
+    public Set<Role> getRoles() {
+        if (roles == null) {
+            roles = new HashSet<>();
+        }
+        return roles;
+    }
 }

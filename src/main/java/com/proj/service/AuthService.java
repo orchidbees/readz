@@ -1,7 +1,7 @@
 package com.proj.service;
 
-import com.proj.dto.AuthRequest;
-import com.proj.dto.AuthResponse;
+import com.proj.dto.http.AuthRequest;
+import com.proj.dto.http.AuthResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

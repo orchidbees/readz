@@ -1,6 +1,6 @@
 package com.proj.service;
 
-import com.proj.dto.AuthorReference;
+import com.proj.dto.http.AuthorReference;
 import com.proj.entity.Author;
 import com.proj.repository.AuthorRepository;
 import lombok.RequiredArgsConstructor;

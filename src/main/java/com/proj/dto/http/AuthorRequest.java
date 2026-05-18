@@ -1,4 +1,4 @@
-package com.proj.dto;
+package com.proj.dto.http;
 
 import java.time.LocalDate;
 

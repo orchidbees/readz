@@ -1,6 +1,6 @@
 package com.proj.constant;
 
-public enum RoleName {
+public enum RoleType {
     ROLE_ADMIN,
     ROLE_USER
 }

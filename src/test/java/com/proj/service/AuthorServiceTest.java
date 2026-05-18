@@ -1,5 +1,6 @@
 package com.proj.service;
 
+import com.proj.dto.http.AuthorReference;
 import com.proj.entity.Author;
 import com.proj.repository.AuthorRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -40,5 +42,19 @@ public class AuthorServiceTest {
         authorService.fetchAuthors(authorIds);
 
         assertThat(output.getOut()).contains("Author IDs not found: [2, 3]");
+    }
+
+    @Test
+    void author_entity_should_be_mapped_to_author_reference() {
+        Author author = new Author();
+        author.setId(1L);
+        author.setFullName("Carl Sagan");
+        author.setBirthDate(LocalDate.parse("1934-11-09"));
+
+        Set<AuthorReference> authorReference = authorService.convertToReference(Set.of(author));
+
+        assertThat(authorReference)
+                .singleElement()
+                .isEqualTo(new AuthorReference(author.getId(), author.getFullName(), author.getBirthDate()));
     }
 }

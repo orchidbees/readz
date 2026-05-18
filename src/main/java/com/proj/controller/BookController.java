@@ -1,7 +1,7 @@
 package com.proj.controller;
 
-import com.proj.dto.BookRequest;
-import com.proj.dto.BookResponse;
+import com.proj.dto.http.BookRequest;
+import com.proj.dto.http.BookResponse;
 import com.proj.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
