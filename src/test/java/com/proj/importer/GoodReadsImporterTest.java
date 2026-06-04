@@ -39,7 +39,7 @@ public class GoodReadsImporterTest {
 
         MultipartFile file = createFileForImport(gr);
 
-        Set<ImportResult> results = importer.extract(file);
+        Set<ImportResult> results = importer.importBooks(file);
 
         assertThat(results)
                 .singleElement()
@@ -55,7 +55,7 @@ public class GoodReadsImporterTest {
 
         MultipartFile file = createFileForImport(gr);
 
-        Set<ImportResult> results = importer.extract(file);
+        Set<ImportResult> results = importer.importBooks(file);
 
         assertThat(results)
                 .singleElement()
@@ -71,7 +71,7 @@ public class GoodReadsImporterTest {
 
         MultipartFile file = createFileForImport(gr);
 
-        Set<ImportResult> results = importer.extract(file);
+        Set<ImportResult> results = importer.importBooks(file);
 
         assertThat(results)
                 .singleElement()
@@ -88,7 +88,7 @@ public class GoodReadsImporterTest {
 
         MultipartFile file = createFileForImport(gr);
 
-        Set<ImportResult> results = importer.extract(file);
+        Set<ImportResult> results = importer.importBooks(file);
 
         assertThat(results)
                 .singleElement()
@@ -104,7 +104,7 @@ public class GoodReadsImporterTest {
 
         MultipartFile file = createFileForImport(gr);
 
-        Set<ImportResult> results = importer.extract(file);
+        Set<ImportResult> results = importer.importBooks(file);
 
         assertThat(results)
                 .singleElement()

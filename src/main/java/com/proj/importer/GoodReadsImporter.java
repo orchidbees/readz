@@ -18,11 +18,11 @@ import java.util.List;
 import java.util.Set;
 
 @Slf4j
-public class GoodReadsImporter {
+public class GoodReadsImporter implements BookImporter {
 
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
-    public Set<ImportResult> extract(MultipartFile file) {
+    public Set<ImportResult> importBooks(MultipartFile file) {
         Set<ImportResult> importedBooks = new HashSet<>();
         int rows = 0;
 
